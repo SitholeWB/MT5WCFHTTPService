@@ -32,12 +32,6 @@ namespace MT5WCFHTTPService
 			}
 		}
 
-		public string EchoWithGet(string s)
-		{
-			RetryConnecting();
-			return "You said " + s;
-		}
-
 		public double GetAccountBalance()
 		{
 			RetryConnecting();

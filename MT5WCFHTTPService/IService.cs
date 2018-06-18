@@ -15,10 +15,6 @@ namespace MT5WCFHTTPService
 	{
 		[OperationContract]
 		[WebGet]
-		string EchoWithGet(string s);
-
-		[OperationContract]
-		[WebGet]
 		double GetAccountBalance();
 
 		[OperationContract]
