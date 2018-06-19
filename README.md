@@ -3,7 +3,7 @@ WCF Service that wrap the https://github.com/vdemydiuk/mtapi and expose MQL5 end
 
 # Setup
 The first step will be to follow the Metatrader 5 instructions from http://mtapi4.net/how-to-use/.
-Then pull the code into your machine and set MT5HttpService as startup project, you should be ready to go and hit endpoints defined on file IService.
+Then pull the code into your machine and **set MT5HttpHostService as startup project**, you should be ready to go and hit endpoints defined on file IService.
 
 # Version
 
