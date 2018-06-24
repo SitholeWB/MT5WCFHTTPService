@@ -15,15 +15,15 @@ namespace MT5WCFHTTPService
 	{
 		[OperationContract]
 		[WebGet]
-		double GetAccountBalance();
+		double AccountBalance();
 
 		[OperationContract]
 		[WebGet]
-		DateTime GetServerTimeCurrent();
+		DateTime ServerTimeCurrent();
 
 		[OperationContract]
 		[WebGet]
-		MqlTick GetSymbolInfoTick(string symbol);
+		MqlTick SymbolInfoTick(string symbol);
 
 		[OperationContract]
 		[WebGet]
@@ -34,14 +34,14 @@ namespace MT5WCFHTTPService
 		//[WebInvoke(Method = "GET",
 		//   RequestFormat = WebMessageFormat.Json,
 		//   ResponseFormat = WebMessageFormat.Json)]
-		List<FXModes.MqlRates> GetRatesByPositions(string symbol, string timeframe, int startPosition, int count);
+		List<FXModes.MqlRates> RatesByPositions(string symbol, string timeframe, int startPosition, int count);
 
 		[OperationContract]
 		[WebGet]
-		List<FXModes.MqlRates> GetRatesByDates(string symbol, string timeframe, string startDateString, string endDateString);
+		List<FXModes.MqlRates> RatesByDates(string symbol, string timeframe, string startDateString, string endDateString);
 
 		[OperationContract]
 		[WebGet]
-		FXModes.MqlRates GetCurrentIncompleteCandle(string symbol, string timeframe);
+		FXModes.MqlRates CurrentIncompleteCandle(string symbol, string timeframe);
 	}
 }

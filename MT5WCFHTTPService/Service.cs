@@ -32,19 +32,19 @@ namespace MT5WCFHTTPService
 			}
 		}
 
-		public double GetAccountBalance()
+		public double AccountBalance()
 		{
 			RetryConnecting();
 			return mtApi5Client.AccountInfoDouble(ENUM_ACCOUNT_INFO_DOUBLE.ACCOUNT_BALANCE);
 		}
 
-		public DateTime GetServerTimeCurrent()
+		public DateTime ServerTimeCurrent()
 		{
 			RetryConnecting();
 			return mtApi5Client.TimeCurrent();
 		}
 
-		public MqlTick GetSymbolInfoTick(string symbol)
+		public MqlTick SymbolInfoTick(string symbol)
 		{
 			RetryConnecting();
 			mtApi5Client.SymbolInfoTick(symbol, out MqlTick mqlTick);
@@ -57,7 +57,7 @@ namespace MT5WCFHTTPService
 			return mtApi5Client.SymbolInfoDouble(symbol, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_POINT);
 		}
 
-		public List<FXModes.MqlRates> GetRatesByPositions(string symbol, string timeframe, int startPosition, int count)
+		public List<FXModes.MqlRates> RatesByPositions(string symbol, string timeframe, int startPosition, int count)
 		{
 			RetryConnecting();
 			if (count <= 0 || startPosition < 0)
@@ -93,7 +93,7 @@ namespace MT5WCFHTTPService
 		// <param name="startDateString">Lower bound date in format yyyyMMddHHmmss</param>
 		// <param name="endDateString">Upper bound date in format yyyyMMddHHmmss</param>
 		// <returns>List of Engulfings</returns>
-		public List<FXModes.MqlRates> GetRatesByDates(string symbol, string timeframe, string startDateString, string endDateString)
+		public List<FXModes.MqlRates> RatesByDates(string symbol, string timeframe, string startDateString, string endDateString)
 		{
 			RetryConnecting();
 			var startDate = DateTime.ParseExact(startDateString, "yyyyMMddHHmmss", CultureInfo.InvariantCulture);
@@ -133,7 +133,7 @@ namespace MT5WCFHTTPService
 			return newCandles;
 		}
 
-		public FXModes.MqlRates GetCurrentIncompleteCandle(string symbol, string timeframe)
+		public FXModes.MqlRates CurrentIncompleteCandle(string symbol, string timeframe)
 		{
 			RetryConnecting();
 			ENUM_TIMEFRAMES enumTimeframe = (ENUM_TIMEFRAMES)Enum.Parse(typeof(ENUM_TIMEFRAMES), timeframe);
